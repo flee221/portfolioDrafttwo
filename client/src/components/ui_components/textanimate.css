@@ -7,25 +7,6 @@
   }
 }
 
-@keyframes glow {
-  from {
-    text-shadow:
-      0 0 2px rgb(243, 198, 115),
-      0 0 3px rgb(243, 198, 115),
-      0 0 4px #f0b104,
-      0 0 5px #f0b104;
-  }
-
-  to {
-    text-shadow:
-      0 0 2px rgb(243, 198, 115),
-      0 0 3px rgb(243, 198, 115),
-      0 0 4px rgb(243, 198, 115),
-      0 0 5px rgb(243, 198, 115),
-      0 0 6px rgb(243, 198, 115);
-  }
-}
-
 .textContainer {
   overflow: hidden;
   white-space: nowrap;
@@ -37,8 +18,7 @@
   font-family: "Courier New", Courier, monospace;
   font-size: xx-large;
   font-weight: 600;
-  color: #ffd890;
-  animation: animatedText 10s linear infinite; /* default speed if not overridden by JS */
+  animation: animatedText 10s; /*linear infinite default speed if not overridden by JS */
 
   margin: 10px;
 }

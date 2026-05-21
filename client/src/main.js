@@ -1,5 +1,6 @@
 import { searchInput } from "./components/ui_components/searchInput.js";
 //import { githubApi } from "./apiRouter.js";
+import { revealAnimation } from "./components/ui_components/revealAnimation.js";
 import { textanimate } from "./components/ui_components/textanimate.js";
 import { asciiConvert } from "./components/ui_components/asciiConvert.js";
 import { barChart } from "./components/ui_components/barChart.js";
@@ -8,6 +9,20 @@ import "./style.css";
 function initApp() {
   const app = document.getElementById("app");
 
+  const mainContainer = document.createElement("div");
+  mainContainer.id = "main-container";
+
+  const layerOne = document.createElement("div");
+  layerOne.className = "layer-one";
+
+  const layerTwo = document.createElement("div");
+  layerTwo.className = "layer-two";
+
+  mainContainer.appendChild(layerOne);
+  mainContainer.appendChild(layerTwo);
+
+  app.appendChild(mainContainer);
+  revealAnimation(mainContainer, layerTwo);
   const handleKeyInput = (event, inputElement) => {
     if (event.key === "Enter") {
       const query = inputElement.value.trim();
@@ -30,8 +45,8 @@ function initApp() {
     onButtonClick: handleButtonClick,
   });
 
-  app.appendChild(textanimate("flisscodes", 50));
-  app.appendChild(search);
+  //app.appendChild(textanimate("flisscodes", 50));
+  //app.appendChild(search);
 
   //DOM elements ^
 }
